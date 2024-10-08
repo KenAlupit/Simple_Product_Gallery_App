@@ -85,14 +85,14 @@ class ProductCard extends StatelessWidget {
   final String title;
   final String imageUrl;
   final double price;
-  final String description; // New parameter
+  final String description;
 
   const ProductCard({
     super.key,
     required this.title,
     required this.imageUrl,
     required this.price,
-    required this.description, // New parameter
+    required this.description,
   });
 
   @override
@@ -166,7 +166,7 @@ class ProductCard extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                description, // Displaying the product description
+                description,
                 style: const TextStyle(fontSize: 14),
               ),
             ],
@@ -174,7 +174,7 @@ class ProductCard extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop();
               },
               child: const Text('Close'),
             ),
