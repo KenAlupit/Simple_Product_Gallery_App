@@ -37,42 +37,42 @@ class MyHomePage extends StatelessWidget {
             title: 'Product 1',
             imageUrl:
                 'https://dummyimage.com/300x150/FF5733/FFFFFF&text=Product+1',
-            price: 29.99,
+            price: 100,
             description: 'This is a description for Product 1.',
           ),
           ProductCard(
             title: 'Product 2',
             imageUrl:
                 'https://dummyimage.com/300x150/33FF57/FFFFFF&text=Product+2',
-            price: 49.99,
+            price: 200,
             description: 'This is a description for Product 2.',
           ),
           ProductCard(
             title: 'Product 3',
             imageUrl:
                 'https://dummyimage.com/300x150/3357FF/FFFFFF&text=Product+3',
-            price: 19.99,
+            price: 300,
             description: 'This is a description for Product 3.',
           ),
           ProductCard(
             title: 'Product 4',
             imageUrl:
                 'https://dummyimage.com/300x150/FF33A1/FFFFFF&text=Product+4',
-            price: 39.99,
+            price: 400,
             description: 'This is a description for Product 4.',
           ),
           ProductCard(
             title: 'Product 5',
             imageUrl:
                 'https://dummyimage.com/300x150/FFC300/FFFFFF&text=Product+5',
-            price: 24.99,
+            price: 500,
             description: 'This is a description for Product 5.',
           ),
           ProductCard(
             title: 'Product 6',
             imageUrl:
                 'https://dummyimage.com/300x150/DAF7A6/FFFFFF&text=Product+6',
-            price: 59.99,
+            price: 600,
             description: 'This is a description for Product 6.',
           ),
         ],
@@ -130,7 +130,7 @@ class ProductCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
-                '\$${price.toStringAsFixed(2)}',
+                '\PHP.${price.toStringAsFixed(2)}',
                 style: const TextStyle(fontSize: 16, color: Colors.green),
               ),
             ),
