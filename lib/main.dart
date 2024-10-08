@@ -161,7 +161,7 @@ class ProductCard extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                '\$${price.toStringAsFixed(2)}',
+                'PHP.${price.toStringAsFixed(2)}',
                 style: const TextStyle(fontSize: 16, color: Colors.green),
               ),
               const SizedBox(height: 10),
