@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,8 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Product Gallery',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white, // Set overall background color to white
       ),
-      home: const MyHomePage(title: 'Product Gallery'),
+      home: const MyHomePage(title: 'PRODUCT GALLERY'),
     );
   }
 }
@@ -28,51 +31,96 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 26,
+            color: Color(0xFF1F1F1F), // Set title text color to #1F1F1F
+            letterSpacing: 1.2,
+          ),
+        ),
+        backgroundColor: Colors.white, // Set AppBar background color to white
+        elevation: 0, // Remove AppBar shadow for a flat design
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(8.0),
-        children: const [
-          ProductCard(
-            title: 'Product 1',
-            imageUrl: 'assets/images/paracetamol.png',
-            price: 100,
-            description: 'This is a description for Product 1.',
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 10), // Empty space above the header
+
+          // Top Divider spanning the full width
+          Divider(
+            color: const Color(0xFF1F1F1F), // Line color #1F1F1F
+            thickness: 2,
           ),
-          ProductCard(
-            title: 'Product 2',
-            imageUrl:
-                'assets/images/century_hotdog.jpg',
-            price: 200,
-            description: 'This is a description for Product 2.',
+
+          const SizedBox(height: 5), // spacing on top of browse products
+
+          // "Browse Products" Subtitle with left alignment and horizontal padding
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: const Text(
+              'BROWSE PRODUCTS',
+              style: TextStyle(
+                fontSize: 14,
+                color: Color(0xFF1F1F1F), // Subtitle text color #1F1F1F
+              ),
+            ),
           ),
-          ProductCard(
-            title: 'Product 3',
-            imageUrl:
-                'assets/images/house_and_lot.jpg',
-            price: 300,
-            description: 'This is a description for Product 3.',
+
+          const SizedBox(height: 5), // spacing on bottom of browse products
+
+          // Bottom Divider spanning the full width
+          Divider(
+            color: const Color(0xFF1F1F1F), // Line color #1F1F1F
+            thickness: 2,
           ),
-          ProductCard(
-            title: 'Product 4',
-            imageUrl:
-                'https://dummyimage.com/300x150/FF33A1/FFFFFF&text=Product+4',
-            price: 400,
-            description: 'This is a description for Product 4.',
-          ),
-          ProductCard(
-            title: 'Product 5',
-            imageUrl:
-                'https://dummyimage.com/300x150/FFC300/FFFFFF&text=Product+5',
-            price: 500,
-            description: 'This is a description for Product 5.',
-          ),
-          ProductCard(
-            title: 'Product 6',
-            imageUrl:
-                'https://dummyimage.com/300x150/DAF7A6/FFFFFF&text=Product+6',
-            price: 600,
-            description: 'This is a description for Product 6.',
+
+          // Expanded ListView with horizontal padding
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+              child: ListView(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                children: const [
+                  ProductCard(
+                    title: 'PRODUCT 1',
+                    imageUrl: 'https://dummyimage.com/300x300/FF5733/FFFFFF&text=Product+1',
+                    price: 100,
+                    description: 'This is a description for Product 1.',
+                  ),
+                  ProductCard(
+                    title: 'PRODUCT 2',
+                    imageUrl: 'https://dummyimage.com/300x300/33FF57/FFFFFF&text=Product+2',
+                    price: 200,
+                    description: 'This is a description for Product 2.',
+                  ),
+                  ProductCard(
+                    title: 'PRODUCT 3',
+                    imageUrl: 'https://dummyimage.com/300x300/3357FF/FFFFFF&text=Product+3',
+                    price: 300,
+                    description: 'This is a description for Product 3.',
+                  ),
+                  ProductCard(
+                    title: 'PRODUCT 4',
+                    imageUrl: 'https://dummyimage.com/300x300/FF33A1/FFFFFF&text=Product+4',
+                    price: 400,
+                    description: 'This is a description for Product 4.',
+                  ),
+                  ProductCard(
+                    title: 'PRODUCT 5',
+                    imageUrl: 'https://dummyimage.com/300x300/FFC300/FFFFFF&text=Product+5',
+                    price: 500,
+                    description: 'This is a description for Product 5.',
+                  ),
+                  ProductCard(
+                    title: 'PRODUCT 6',
+                    imageUrl: 'https://dummyimage.com/300x300/DAF7A6/FFFFFF&text=Product+6',
+                    price: 600,
+                    description: 'This is a description for Product 6.',
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
@@ -101,36 +149,63 @@ class ProductCard extends StatelessWidget {
         _showProductDialog(context);
       },
       child: Card(
+        color: const Color(0xFFD1FF00), // Set card background color to #d1ff00
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
+          side: const BorderSide(
+            color: Color(0xFF303030), // Set card border color to #303030
+            width: 2,
+          ),
         ),
+        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0), // Increased horizontal margin
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(
-              imageUrl,
-              height: 100,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return const Center(
-                    child: Text('Image not found',
-                        style: TextStyle(color: Colors.red)));
-              },
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            // Image section with grey background
+            Container(
+              color: Colors.grey, // Set image section background to grey
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+                child: AspectRatio(
+                  aspectRatio: 1, // Makes the image square
+                  child: Image.network(
+                    imageUrl,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Center(
+                        child: Text(
+                          'Image not found',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.all(8.0),
+              child: Text( //TITLE FOR CARD
+                title,
+                style: const TextStyle(
+                  fontSize: 20,
+                  letterSpacing: 1.2,
+                  color: Color(0xFF1F1F1F), // Set title text color to #1F1F1F
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Text(
-                '\PHP.${price.toStringAsFixed(2)}',
-                style: const TextStyle(fontSize: 16, color: Colors.green),
+                'PHP ${price.toStringAsFixed(2)}', // Corrected line to show price correctly
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF1F1F1F), // Set price text color to #1F1F1F
+                ),
               ),
             ),
           ],
@@ -144,29 +219,60 @@ class ProductCard extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(title),
+          backgroundColor: const Color(0xFFD1FF00), // Set dialog background to #d1ff00
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: const BorderSide(
+              color: Color(0xFF303030), // Set dialog border color to #303030
+              width: 2,
+            ),
+          ),
+          title: Text(
+            title,
+            style: const TextStyle(
+              color: Colors.black, // Set title color to black
+            ),
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(
-                imageUrl,
-                height: 150,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return const Center(
-                      child: Text('Image not found',
-                          style: TextStyle(color: Colors.red)));
-                },
+              // Image section with grey background
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10), // Ensure rounded corners match
+                child: Container(
+                  color: Colors.grey, // Set image section background to grey
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Image.network(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Center(
+                          child: Text(
+                            'Image not found',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(height: 10),
               Text(
-                'PHP.${price.toStringAsFixed(2)}',
-                style: const TextStyle(fontSize: 16, color: Colors.green),
+                'PHP ${price.toStringAsFixed(2)}', // Corrected line to show price correctly
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.black, // Set price text color to black
+                ),
               ),
               const SizedBox(height: 10),
               Text(
                 description,
-                style: const TextStyle(fontSize: 14),
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.black, // Set description text color to black
+                ),
               ),
             ],
           ),
@@ -175,7 +281,15 @@ class ProductCard extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Close'),
+              child: Text(
+                'Close',
+                style: const TextStyle(
+                  color: Colors.white, // Set close button text color to white
+                ),
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: const Color(0xFF303030), // Set close button background color to #303030
+              ),
             ),
           ],
         );
