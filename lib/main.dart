@@ -110,16 +110,17 @@ class MyHomePage extends StatelessWidget {
                     description: 'Ra Elyu',
                   ),
                   ProductCard(
-                    title: 'PRODUCT 5',
-                    imageUrl: 'https://dummyimage.com/300x300/FFC300/FFFFFF&text=Product+5',
+                    title: 'Alaxan FR',
+                    imageUrl: 'assets/images/alaxan.webp',
                     price: 500,
-                    description: 'This is a description for Product 5.',
+                    description: 'Faster relief of mild to moderately severe pain of musculoskeletal origin eg, muscle pain, arthritis, rheumatism, sprain, strain, bursitis,tendonitis, backache, stiff neck, tension headache, dysmenorrhea, toothache, pain after tooth extraction & minor surgical operations. \n\nReduction of fever.',
                   ),
                   ProductCard(
-                    title: 'PRODUCT 6',
-                    imageUrl: 'https://dummyimage.com/300x300/DAF7A6/FFFFFF&text=Product+6',
+                    title: 'Robitussin',
+                    imageUrl: 'assets/images/robitussin.jpg',
                     price: 600,
-                    description: 'This is a description for Product 6.',
+                    description: 
+                      'Temporarily relieves cough due to minor throat & bronchial irritation as may occur w/ a cold. \nExpectorant action to help loosen phlegm & thin bronchial secretions to make cough more productive. \n\nHelps relieve chest congestion.',
                   ),
                 ],
               ),
