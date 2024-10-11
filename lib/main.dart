@@ -83,22 +83,22 @@ class MyHomePage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 children: const [
                   ProductCard(
-                    title: 'PRODUCT 1',
-                    imageUrl: 'https://dummyimage.com/300x300/FF5733/FFFFFF&text=Product+1',
+                    title: 'GAMOT',
+                    imageUrl: 'assets/images/paracetamol.png',
                     price: 100,
-                    description: 'This is a description for Product 1.',
+                    description: 'Sick? Ok.',
                   ),
                   ProductCard(
-                    title: 'PRODUCT 2',
-                    imageUrl: 'https://dummyimage.com/300x300/33FF57/FFFFFF&text=Product+2',
+                    title: 'BAHAY',
+                    imageUrl: 'assets/images/house_and_lot.jpg',
                     price: 200,
-                    description: 'This is a description for Product 2.',
+                    description: 'How to stop being homeless 101',
                   ),
                   ProductCard(
-                    title: 'PRODUCT 3',
-                    imageUrl: 'https://dummyimage.com/300x300/3357FF/FFFFFF&text=Product+3',
+                    title: 'PAGKAIN',
+                    imageUrl: 'assets/images/century_hotdog.jpg',
                     price: 300,
-                    description: 'This is a description for Product 3.',
+                    description: 'Hotdog ni Aljur',
                   ),
                   ProductCard(
                     title: 'PRODUCT 4',
@@ -172,7 +172,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 child: AspectRatio(
                   aspectRatio: 1, // Makes the image square
-                  child: Image.network(
+                  child: Image.asset(
                     imageUrl,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
@@ -243,7 +243,7 @@ class ProductCard extends StatelessWidget {
                   color: Colors.grey, // Set image section background to grey
                   child: AspectRatio(
                     aspectRatio: 1,
-                    child: Image.network(
+                    child: Image.asset(
                       imageUrl,
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
