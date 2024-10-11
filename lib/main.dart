@@ -107,16 +107,17 @@ class MyHomePage extends StatelessWidget {
                     description: 'Ra Elyu',
                   ),
                   ProductCard(
-                    title: 'RICE COOKER',
-                    imageUrl: 'assets/images/ricecooker.webp',
+                    title: 'Alaxan FR',
+                    imageUrl: 'assets/images/alaxan.webp',
                     price: 500,
-                    description: 'The VS Code of Filipino Meals',
+                    description: 'Faster relief of mild to moderately severe pain of musculoskeletal origin eg, muscle pain, arthritis, rheumatism, sprain, strain, bursitis,tendonitis, backache, stiff neck, tension headache, dysmenorrhea, toothache, pain after tooth extraction & minor surgical operations. \n\nReduction of fever.',
                   ),
                   ProductCard(
-                    title: 'HAYOP',
-                    imageUrl: 'assets/images/dolphins.png',
+                    title: 'Robitussin',
+                    imageUrl: 'assets/images/robitussin.jpg',
                     price: 600,
-                    description: 'I just wanna be part of your symphony, Man.',
+                    description: 
+                      '''Temporarily relieves cough due to minor throat & bronchial irritation as may occur w/ a cold. \nExpectorant action to help loosen phlegm & thin bronchial secretions to make cough more productive. \n\nHelps relieve chest congestion.''',
                   ),
                 ],
               ),
