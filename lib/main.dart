@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Product Gallery',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.white, // Set overall background color to white
+        scaffoldBackgroundColor:
+            Colors.white, // Set overall background color to white
       ),
       home: const MyHomePage(title: 'PRODUCT GALLERY'),
     );
@@ -39,6 +40,7 @@ class MyHomePage extends StatelessWidget {
             letterSpacing: 1.2,
           ),
         ),
+        centerTitle: true,
         backgroundColor: Colors.white, // Set AppBar background color to white
         elevation: 0, // Remove AppBar shadow for a flat design
       ),
@@ -78,7 +80,8 @@ class MyHomePage extends StatelessWidget {
           // Expanded ListView with horizontal padding
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
               child: ListView(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 children: const [
@@ -159,13 +162,14 @@ class ProductCard extends StatelessWidget {
             width: 2,
           ),
         ),
-        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0), // Increased horizontal margin
+        margin: const EdgeInsets.symmetric(
+            vertical: 8.0, horizontal: 8.0), // Increased horizontal margin
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Image section with grey background
+            // Image section with white background
             Container(
-              color: Colors.grey, // Set image section background to grey
+              color: Colors.white, // Set image section background to white
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
@@ -180,7 +184,7 @@ class ProductCard extends StatelessWidget {
                       return const Center(
                         child: Text(
                           'Image not found',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                         ),
                       );
                     },
@@ -190,7 +194,8 @@ class ProductCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text( //TITLE FOR CARD
+              child: Text(
+                //TITLE FOR CARD
                 title,
                 style: const TextStyle(
                   fontSize: 20,
@@ -200,7 +205,8 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Text(
                 'PHP ${price.toStringAsFixed(2)}', // Corrected line to show price correctly
                 style: const TextStyle(
@@ -220,7 +226,8 @@ class ProductCard extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: const Color(0xFFD1FF00), // Set dialog background to #d1ff00
+          backgroundColor:
+              const Color(0xFFD1FF00), // Set dialog background to #d1ff00
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: const BorderSide(
@@ -239,7 +246,8 @@ class ProductCard extends StatelessWidget {
             children: [
               // Image section with grey background
               ClipRRect(
-                borderRadius: BorderRadius.circular(10), // Ensure rounded corners match
+                borderRadius:
+                    BorderRadius.circular(10), // Ensure rounded corners match
                 child: Container(
                   color: Colors.grey, // Set image section background to grey
                   child: AspectRatio(
@@ -289,7 +297,8 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
               style: TextButton.styleFrom(
-                backgroundColor: const Color(0xFF303030), // Set close button background color to #303030
+                backgroundColor: const Color(
+                    0xFF303030), // Set close button background color to #303030
               ),
             ),
           ],
