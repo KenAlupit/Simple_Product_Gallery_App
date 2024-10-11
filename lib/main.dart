@@ -35,22 +35,21 @@ class MyHomePage extends StatelessWidget {
         children: const [
           ProductCard(
             title: 'Product 1',
-            imageUrl:
-                'https://dummyimage.com/300x150/FF5733/FFFFFF&text=Product+1',
+            imageUrl: 'assets/images/paracetamol.png',
             price: 100,
             description: 'This is a description for Product 1.',
           ),
           ProductCard(
             title: 'Product 2',
             imageUrl:
-                'https://dummyimage.com/300x150/33FF57/FFFFFF&text=Product+2',
+                'assets/images/century_hotdog.jpg',
             price: 200,
             description: 'This is a description for Product 2.',
           ),
           ProductCard(
             title: 'Product 3',
             imageUrl:
-                'https://dummyimage.com/300x150/3357FF/FFFFFF&text=Product+3',
+                'assets/images/house_and_lot.jpg',
             price: 300,
             description: 'This is a description for Product 3.',
           ),
@@ -109,7 +108,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.network(
+            Image.asset(
               imageUrl,
               height: 100,
               fit: BoxFit.cover,
@@ -149,7 +148,7 @@ class ProductCard extends StatelessWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.network(
+              Image.asset(
                 imageUrl,
                 height: 150,
                 fit: BoxFit.cover,
