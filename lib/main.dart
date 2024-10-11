@@ -166,9 +166,9 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Image section with grey background
+            // Image section with white background
             Container(
-              color: Colors.grey, // Set image section background to grey
+              color: Colors.white, // Set image section background to white
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
@@ -183,7 +183,7 @@ class ProductCard extends StatelessWidget {
                       return const Center(
                         child: Text(
                           'Image not found',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                         ),
                       );
                     },
