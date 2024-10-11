@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Product Gallery',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.white, // Set overall background color to white
+        scaffoldBackgroundColor:
+            Colors.white, // Set overall background color to white
       ),
       home: const MyHomePage(title: 'PRODUCT GALLERY'),
     );
@@ -39,6 +40,7 @@ class MyHomePage extends StatelessWidget {
             letterSpacing: 1.2,
           ),
         ),
+        centerTitle: true,
         backgroundColor: Colors.white, // Set AppBar background color to white
         elevation: 0, // Remove AppBar shadow for a flat design
       ),
@@ -78,7 +80,8 @@ class MyHomePage extends StatelessWidget {
           // Expanded ListView with horizontal padding
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
               child: ListView(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 children: const [
@@ -102,19 +105,22 @@ class MyHomePage extends StatelessWidget {
                   ),
                   ProductCard(
                     title: 'PRODUCT 4',
-                    imageUrl: 'https://dummyimage.com/300x300/FF33A1/FFFFFF&text=Product+4',
+                    imageUrl:
+                        'https://dummyimage.com/300x300/FF33A1/FFFFFF&text=Product+4',
                     price: 400,
                     description: 'This is a description for Product 4.',
                   ),
                   ProductCard(
                     title: 'PRODUCT 5',
-                    imageUrl: 'https://dummyimage.com/300x300/FFC300/FFFFFF&text=Product+5',
+                    imageUrl:
+                        'https://dummyimage.com/300x300/FFC300/FFFFFF&text=Product+5',
                     price: 500,
                     description: 'This is a description for Product 5.',
                   ),
                   ProductCard(
                     title: 'PRODUCT 6',
-                    imageUrl: 'https://dummyimage.com/300x300/DAF7A6/FFFFFF&text=Product+6',
+                    imageUrl:
+                        'https://dummyimage.com/300x300/DAF7A6/FFFFFF&text=Product+6',
                     price: 600,
                     description: 'This is a description for Product 6.',
                   ),
@@ -158,7 +164,8 @@ class ProductCard extends StatelessWidget {
             width: 2,
           ),
         ),
-        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0), // Increased horizontal margin
+        margin: const EdgeInsets.symmetric(
+            vertical: 8.0, horizontal: 8.0), // Increased horizontal margin
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -189,7 +196,8 @@ class ProductCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text( //TITLE FOR CARD
+              child: Text(
+                //TITLE FOR CARD
                 title,
                 style: const TextStyle(
                   fontSize: 20,
@@ -199,7 +207,8 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Text(
                 'PHP ${price.toStringAsFixed(2)}', // Corrected line to show price correctly
                 style: const TextStyle(
@@ -219,7 +228,8 @@ class ProductCard extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: const Color(0xFFD1FF00), // Set dialog background to #d1ff00
+          backgroundColor:
+              const Color(0xFFD1FF00), // Set dialog background to #d1ff00
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: const BorderSide(
@@ -238,7 +248,8 @@ class ProductCard extends StatelessWidget {
             children: [
               // Image section with grey background
               ClipRRect(
-                borderRadius: BorderRadius.circular(10), // Ensure rounded corners match
+                borderRadius:
+                    BorderRadius.circular(10), // Ensure rounded corners match
                 child: Container(
                   color: Colors.grey, // Set image section background to grey
                   child: AspectRatio(
@@ -288,7 +299,8 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
               style: TextButton.styleFrom(
-                backgroundColor: const Color(0xFF303030), // Set close button background color to #303030
+                backgroundColor: const Color(
+                    0xFF303030), // Set close button background color to #303030
               ),
             ),
           ],
